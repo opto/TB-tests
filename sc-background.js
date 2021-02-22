@@ -4,6 +4,20 @@
  */
 
 
+
+  let defaultPrefs = {
+    "version": "1.0.0",
+    "ctrlKey": "d"
+//    "dataSet": defDataJson
+  };
+ 
+ 
+  preferences.init(defaultPrefs);
+ 
+//don't know how fast/async init is
+window.setTimeout(()=> {console.log(preferences.getPref("version")); }, 300);
+
+/*
 messenger.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
   if (temporary) return; // skip during development
   switch (reason) {
@@ -19,17 +33,17 @@ messenger.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
 });
 
 
-
+*/
 async function main() {
    // messenger.WindowListener.registerDefaultPrefs("chrome/content/scripts/quickfoldersDefaults.js");
     
-
+ /*
     messenger.WindowListener.registerChromeUrl([ 
         ["content", "showCC", "chrome/content/"],
             ["locale", "showCC", "en-US", "chrome/locale/en-US/"],
   //      ["locale", "quickfolders", "ca", "chrome/locale/ca/"],
         ["locale", "showCC", "de", "chrome/locale/de/"],
-  /*      ["locale", "quickfolders", "es-MX", "chrome/locale/es-MX/"],
+       ["locale", "quickfolders", "es-MX", "chrome/locale/es-MX/"],
         ["locale", "quickfolders", "es", "chrome/locale/es/"],
         ["locale", "quickfolders", "fr", "chrome/locale/fr/"],
         ["locale", "quickfolders", "hu-HU", "chrome/locale/hu-HU/"],
@@ -48,9 +62,9 @@ async function main() {
         ["locale", "quickfolders", "zh", "chrome/locale/zh/"],
         ["locale", "quickfolders", "zh-CHT", "chrome/locale/zh/"],
         ["locale", "quickfolders", "zh-TW", "chrome/locale/zh/"]
-    */
-       ]);
 
+       ]);
+    */
  
     //messenger.WindowListener.registerOptionsPage("chrome://nostalgy/content/edit-prefs.xul"); 
     
@@ -62,8 +76,8 @@ async function main() {
 //    messenger.WindowListener.registerWindow("chrome://messenger/content/messenger.xul", "chrome/content/scripts/sc-messenger.js");
 //    messenger.WindowListener.registerWindow("chrome://messenger/content/messenger.xhtml", "chrome/content/scripts/sc-messenger.js");
 
-    messenger.WindowListener.registerWindow("chrome://messenger/content/messengercompose.xul", "chrome/content/scripts/sc-composer.js");
-    messenger.WindowListener.registerWindow("chrome://messenger/content/messengercompose/messengercompose.xhtml", "chrome/content/scripts/sc-composer.js");
+//    messenger.WindowListener.registerWindow("chrome://messenger/content/messengercompose.xul", "chrome/content/scripts/sc-composer.js");
+//    messenger.WindowListener.registerWindow("chrome://messenger/content/messengercompose/messengercompose.xhtml", "chrome/content/scripts/sc-composer.js");
 /*
     messenger.WindowListener.registerWindow("chrome://messenger/content/FilterListDialog.xul", "chrome/content/scripts/qf-filterlist.js");
     messenger.WindowListener.registerWindow("chrome://messenger/content/FilterListDialog.xhtml", "chrome/content/scripts/qf-filterlist.js");
@@ -90,7 +104,7 @@ async function main() {
   */
 
 
-    messenger.WindowListener.startListening();
+  //  messenger.WindowListener.startListening();
 }
 
-main();
+//main();

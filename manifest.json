@@ -14,8 +14,10 @@
 			"strict_min_version": "68.0"
 		}
 	},
+    "permissions": ["storage"],
+    
 	"background": {
-		"scripts": ["sc-background.js"]
+		"scripts": ["preferences.js", "sc-background.js"]
 	  },
 	  "experiment_apis": {
 		"WindowListener": {
